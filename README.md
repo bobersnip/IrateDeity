@@ -1,2 +1,2 @@
-# IrateDeity
-Repo for Domain of the Irate Deity
+# Domain of the Irate Deity
+### hi fri dev work pls
