@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:IrateDeity/Assets/Plugins/CodeAssist/Editor/ExternalReferences/SystemBinariesForDotNetStandard20.unitypackage.meta
+guid: c13e9909100c0ce4e868c0ff93f0a3f6
+=======
 guid: 183614680d2eb4c4c894413d154cf73d
+>>>>>>> Added base for character, equipment, weapons, enemies, and menus:IrateDeity/Assets/Scenes/Essential.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

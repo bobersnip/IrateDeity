@@ -1530,63 +1530,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 577853674}
   m_CullTransparentMesh: 1
---- !u!1001 &593612542
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6858068774934554509, guid: 50056907cb68a814c9991bb12bfa7f2b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.8788476
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858068774934554509, guid: 50056907cb68a814c9991bb12bfa7f2b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.2949855
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858068774934554509, guid: 50056907cb68a814c9991bb12bfa7f2b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858068774934554509, guid: 50056907cb68a814c9991bb12bfa7f2b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7199457
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858068774934554509, guid: 50056907cb68a814c9991bb12bfa7f2b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858068774934554509, guid: 50056907cb68a814c9991bb12bfa7f2b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858068774934554509, guid: 50056907cb68a814c9991bb12bfa7f2b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.6940304
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858068774934554509, guid: 50056907cb68a814c9991bb12bfa7f2b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858068774934554509, guid: 50056907cb68a814c9991bb12bfa7f2b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858068774934554509, guid: 50056907cb68a814c9991bb12bfa7f2b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 87.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7183202481183830238, guid: 50056907cb68a814c9991bb12bfa7f2b, type: 3}
-      propertyPath: m_Name
-      value: DaggerProjectile
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 50056907cb68a814c9991bb12bfa7f2b, type: 3}
 --- !u!1 &640046323
 GameObject:
   m_ObjectHideFlags: 0
@@ -4521,4 +4464,3 @@ SceneRoots:
   - {fileID: 1596125613}
   - {fileID: 120442626}
   - {fileID: 989509096}
-  - {fileID: 593612542}
