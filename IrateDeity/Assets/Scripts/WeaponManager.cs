@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
+    private Camera mainCam;
     private Vector3 playerPos;
     private Vector3 mousePos;
 
@@ -15,6 +16,10 @@ public class WeaponManager : MonoBehaviour
 
     List<WeaponBase> weapons;
 
+    private void Start()
+    {
+        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+    }
     private void Awake()
     {
         mousePos = Input.mousePosition;
@@ -28,10 +33,10 @@ public class WeaponManager : MonoBehaviour
         {
             Debug.Log("Mouse Button clicked");
             // Get mouse pos
-            mousePos = Input.mousePosition;
+            mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
             // Get player pos
             playerPos = transform.position;
-            Vector3 direction = mousePos - playerPos;
+            Vector3 direction = mousePos - transform.position;
             //get projectile data from weapon
             //shoot projectile
             Debug.Log("playerPos is " + playerPos);

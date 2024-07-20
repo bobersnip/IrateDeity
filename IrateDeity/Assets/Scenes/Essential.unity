@@ -4250,6 +4250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2751e0e52f7e22041b1b540c3769c0ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon: {fileID: 1599909978762661323, guid: 5708849ccc6c8454097077be40329af5, type: 3}
   weaponObjectsContainer: {fileID: 820547968}
   startingWeapon: {fileID: 11400000, guid: 1bb8c4f4fca898d4d91ffae41bdf80f0, type: 2}
 --- !u!1 &1779873929

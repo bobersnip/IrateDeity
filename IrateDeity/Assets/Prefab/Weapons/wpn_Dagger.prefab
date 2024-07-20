@@ -50,6 +50,5 @@ MonoBehaviour:
     timeToAttack: 2
     numberOfAttacks: 1
     maxAngle: 0
-  projectile: {fileID: 3444603576654279232, guid: 50056907cb68a814c9991bb12bfa7f2b, type: 3}
+  projectilePrefab: {fileID: 7183202481183830238, guid: 50056907cb68a814c9991bb12bfa7f2b, type: 3}
   timeToAttack: 1
-  daggerPrefab: {fileID: 7183202481183830238, guid: 50056907cb68a814c9991bb12bfa7f2b, type: 3}
