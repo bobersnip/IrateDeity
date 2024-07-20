@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe801d0f116f89d4fbab3209d4099728, type: 3}
+  m_Name: Dagger(Pocket Blade)
+  m_EditorClassIdentifier: 
+  upgradeType: 0
+  Name: Dagger (Pocket Blade)
+  icon: {fileID: 1598530857, guid: 52811434633c832488ca8d7ed8c6cb81, type: 3}
+  weaponStats: {fileID: 11400000, guid: 1bb8c4f4fca898d4d91ffae41bdf80f0, type: 2}
+  weaponUpgradeStats:
+    damage: 0
+    timeToAttack: 1
+    numberOfAttacks: 1
+    maxAngle: 0
