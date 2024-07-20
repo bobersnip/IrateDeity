@@ -44,8 +44,8 @@ public class PlayerMove : MonoBehaviour
             lastVerticalVector = movementVector.y;
         }
 
-        animate.horizontal = movementVector.x;
-        animate.vertical = movementVector.y;
+        //animate.horizontal = movementVector.x;
+        //animate.vertical = movementVector.y;
 
         movementVector = movementVector.normalized;
         movementVector *= speed;

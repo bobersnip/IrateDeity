@@ -222,9 +222,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe24d3c3fab23e848a765e2a7f6dd61b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 2977470577431289315, guid: de6a11ed401fe524ba1c6c83ad174502, type: 3}
+  enemy: {fileID: 8136823957129229735, guid: c937e35707b5812488d24965655c35bd, type: 3}
   spawnArea: {x: 12, y: 8}
-  spawnTimer: 0.3
+  spawnTimer: 5
 --- !u!4 &169835108
 Transform:
   m_ObjectHideFlags: 0
@@ -811,8 +811,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f1f6a6b2cba1a4fa29616e1d29ddd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontal: 0
-  vertical: 0
 --- !u!4 &678867128 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5990315519267883314, guid: f58b5ea9dd1a3b94087755a17dbdb59d, type: 3}
@@ -1946,7 +1944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1845810941
 Transform:
   m_ObjectHideFlags: 0

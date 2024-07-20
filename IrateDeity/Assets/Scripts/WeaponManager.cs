@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
+    private Vector3 playerPos;
+    private Vector3 mousePos;
+
+    [SerializeField] public WeaponBase weapon;
+
     [SerializeField] Transform weaponObjectsContainer;
     [SerializeField] WeaponData startingWeapon;
 
@@ -12,32 +17,35 @@ public class WeaponManager : MonoBehaviour
 
     private void Awake()
     {
-        weapons = new List<WeaponBase>();
+        mousePos = Input.mousePosition;
     }
 
-    private void Start()
+    private void Update()
     {
-        AddWeapon(startingWeapon);
-    }
-
-    public void AddWeapon(WeaponData weaponData)
-    {
-        GameObject weaponGameObject = Instantiate(weaponData.weaponBasePrefab, weaponObjectsContainer);
-        WeaponBase weapondBase = weaponGameObject.GetComponent<WeaponBase>();
-
-        weapondBase.SetData(weaponData);
-        weapons.Add(weapondBase);
-
-        Level level = GetComponent<Level>();
-        if (level != null)
+        //shooting mechanic
+        //If m1 clicked
+        if (Input.GetMouseButton(0))
         {
-            level.AddAvailableUpgrades(weaponData.weaponUpgrades);
+            Debug.Log("Mouse Button clicked");
+            // Get mouse pos
+            mousePos = Input.mousePosition;
+            // Get player pos
+            playerPos = transform.position;
+            Vector3 direction = mousePos - playerPos;
+            //get projectile data from weapon
+            //shoot projectile
+            Debug.Log("playerPos is " + playerPos);
+            weapon.Attack(direction, weaponObjectsContainer);
         }
+        //If mouse 1 held down
+        //Shoot
     }
 
-    internal void UpgradeWeapon(UpgradeData upgradeData)
-    {
-        WeaponBase weaponToUpgrade = weapons.Find(wd => wd.weaponData == upgradeData.weaponStats);
-        weaponToUpgrade.Upgrade(upgradeData);
-    }
+    //private void shootProjectile(projectileBase projectilePrefab, float velocity)
+    //{
+    //    //Spawn projectile
+    //    projectileBase projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+    //    Vector3 dir = mousePos - transform.position;
+    //    Vector3 rot = transform.position - mousePos;
+    //}
 }
