@@ -73,4 +73,5 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # Plugins
-/[Aa]ssets/[Pp]lugins*
+/[Aa]ssets/[Pp]lugins
+/[Aa]ssets/[Pp]lugins/*
