@@ -15,7 +15,7 @@ public class DaggerWeapon : WeaponBase
         //Vector3 direction = new Vector3(playerMove.lastHorizontalVector, 0f).normalized;
 
         // maxangle = 20, startingDegrees = 10
-        Debug.Log("IN SPAWN DAGGER " + direction);
+        Debug.Log("IN SPAWN DAGGER " + direction.normalized);
         float startingDegrees = weaponStats.maxAngle / 2;
         if (weaponStats.numberOfAttacks == 1)
         {
@@ -37,7 +37,7 @@ public class DaggerWeapon : WeaponBase
             ThrowingDaggerProjectile throwingDaggerProjectile = thrownDagger.GetComponent<ThrowingDaggerProjectile>();
                 // throwing angle changes based on even or odd # of proj
             throwingDaggerProjectile.SetDirection(
-                direction,
+                direction.normalized,
                 currentDegrees,
                 direction.x
             );

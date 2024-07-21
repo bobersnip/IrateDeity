@@ -37,6 +37,7 @@ public abstract class projectileBase : MonoBehaviour
         transform.position += direction.normalized * speed * Time.deltaTime;
         timeAlive += Time.deltaTime;
 
+        //collision detection every 6 frames
         if (Time.frameCount % 6 == 0)
         {
             Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, 0.4f);
