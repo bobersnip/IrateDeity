@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:IrateDeity/Assets/Prefab/Projectile.meta
 guid: ee0e7e33e35195745aa08b09e1fca39f
 folderAsset: yes
+=======
+guid: c06b6c7e179b29e4f93513dc186eb12f
+>>>>>>> main:IrateDeity/Assets/Scenes/GameplayScene1.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

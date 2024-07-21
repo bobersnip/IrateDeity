@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: 86d0fef2b050f9c41b3ed3e8bb3917c9
   - enabled: 1
     path: Assets/Scenes/Essential.unity
-    guid: b7dd031cc01c9bc4cb23d9a05f8d29fb
+    guid: 1193ecfd98990d94d88639cc44136dd7
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
@@ -19,5 +19,5 @@ EditorBuildSettings:
     guid: fb7e202ea378b9a40ad7d4500d9119ea
   - enabled: 1
     path: Assets/Scenes/GameplayScene1.unity
-    guid: 45c3957b8237bc54bb7b6e35f643c69b
+    guid: c06b6c7e179b29e4f93513dc186eb12f
   m_configObjects: {}
