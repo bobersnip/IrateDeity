@@ -11,7 +11,7 @@ public class PlayerMove : MonoBehaviour
     [HideInInspector] public float lastHorizontalVector;
     [HideInInspector] public float lastVerticalVector;
 
-    float speed = 3f;
+    [SerializeField] float speed = 3f;
 
     Animate animate;
 
@@ -20,8 +20,7 @@ public class PlayerMove : MonoBehaviour
     {
         rgbd2d = GetComponent<Rigidbody2D>();
         movementVector = new Vector3();
-        speed = GetComponent<Character>().GetMovementSpeed();
-        //animate = GetComponent<Animate>();
+        animate = GetComponent<Animate>();
     }
 
     private void Start()
@@ -45,8 +44,8 @@ public class PlayerMove : MonoBehaviour
             lastVerticalVector = movementVector.y;
         }
 
-        //animate.horizontal = movementVector.x;
-        //animate.vertical = movementVector.y;
+        animate.horizontal = movementVector.x;
+        animate.vertical = movementVector.y;
 
         movementVector = movementVector.normalized;
         movementVector *= speed;

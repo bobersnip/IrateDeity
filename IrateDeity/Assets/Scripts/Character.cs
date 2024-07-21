@@ -6,37 +6,21 @@ using UnityEngine.Analytics;
 
 public class Character : MonoBehaviour
 {
+    [SerializeField] public int maxHp = 10;
     [SerializeField] public int currentHp = 10;
-    [SerializeField] public int currentMp = 10;
-
-    private float hpRegenTimer = 0f;
-    private float mpRegenTimer = 0f;
-
-    [SerializeField] StatusBar hpBar;
-    [SerializeField] StatusBar mpBar;
-
-    [HideInInspector] public Coins coins;
-    private bool isDead = false;
 
     [SerializeField] public float hpRegenRate = 1f;
     [SerializeField] public float hpRegenBase = 10f;
-    [SerializeField] public float mpRegenRate = 1f;
-    [SerializeField] public float mpRegenBase = 10f;
+    private float hpRegenTimer = 0f;
 
-    // Stats
+    public int armor = 0;
+
+    [SerializeField] StatusBar hpBar;
+
     [HideInInspector] public Level level;
+    [HideInInspector] public Coins coins;
 
-    [SerializeField] public int maxHp = 10;
-    [SerializeField] public int maxMp = 10;
-
-
-    public int armor = 0; // defense
-    private float speed = 8; // movement speed
-    [SerializeField] int dexterity = 5;
-    [SerializeField] int wisdom = 5;
-    [SerializeField] int vitality = 5;
-    [SerializeField] int attack = 5;
-
+    private bool isDead = false;
 
     private void Awake()
     {
@@ -47,8 +31,6 @@ public class Character : MonoBehaviour
     private void Start()
     {
         hpBar.SetState(currentHp, maxHp);
-        mpBar.SetState(currentMp, maxMp);
-
     }
 
     private void Update()
@@ -56,14 +38,8 @@ public class Character : MonoBehaviour
         hpRegenTimer += Time.deltaTime;
         if (hpRegenTimer > (hpRegenBase / hpRegenRate))
         {
-            Heal(vitality);
+            Heal(5);
             hpRegenTimer = 0;
-        }
-        mpRegenTimer += Time.deltaTime;
-        if (mpRegenTimer > (mpRegenBase / mpRegenRate))
-        {
-            ManaGain(wisdom);
-            mpRegenTimer = 0;
         }
     }
 
@@ -109,34 +85,4 @@ public class Character : MonoBehaviour
 
         hpBar.SetState(currentHp, maxHp);
     }
-
-    public void ManaGain(int amount)
-    {
-        if (currentMp <= 0)
-        {
-            return;
-        }
-
-        currentMp += amount;
-        if (currentMp > maxMp)
-        {
-            currentMp = maxMp;
-        }
-
-        mpBar.SetState(currentMp, maxMp);
-    }
-
-    public float GetMovementSpeed()
-    {
-        return speed;
-    }
-
-    public int GetAttack()
-    {
-        return attack;
-    }
 }
-
-
-
-
