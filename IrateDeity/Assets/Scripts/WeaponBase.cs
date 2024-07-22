@@ -6,25 +6,16 @@ using UnityEngine;
 public abstract class WeaponBase : MonoBehaviour
 {
     public WeaponData weaponData;
-
     public WeaponStats weaponStats;
+    [SerializeField] public GameObject projectilePrefab;
 
     public float timeToAttack = 1f;
     private float timer;
 
-    public void Update()
-    {
-        timer -= Time.deltaTime;
-
-        if (timer < -0f)
-        {
-            Attack();
-            timer = weaponStats.timeToAttack;
-        }
-    }
 
     // abstract requires that each weapon will have its own attack method
-    public abstract void Attack();
+    // Attack function will spawn a projectile
+    public abstract void Attack(Vector3 direction, Transform wepObj);
 
     public virtual void SetData(WeaponData wd)
     {

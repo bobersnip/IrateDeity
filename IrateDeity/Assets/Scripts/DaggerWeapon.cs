@@ -6,20 +6,16 @@ using UnityEngine;
 
 public class DaggerWeapon : WeaponBase
 {
-    private PlayerMove playerMove;
-
-    [SerializeField] private GameObject daggerPrefab;
-
     private void Awake()
     {
-        playerMove = GetComponentInParent<PlayerMove>();
     }
 
-    private void SpawnDagger()
+    private void SpawnDagger(Vector3 direction, Transform wepObj)
     {
-        Vector3 direction = new Vector3(playerMove.lastHorizontalVector, 0f).normalized;
+        //Vector3 direction = new Vector3(playerMove.lastHorizontalVector, 0f).normalized;
 
         // maxangle = 20, startingDegrees = 10
+        Debug.Log("IN SPAWN DAGGER " + direction.normalized);
         float startingDegrees = weaponStats.maxAngle / 2;
         if (weaponStats.numberOfAttacks == 1)
         {
@@ -30,25 +26,23 @@ public class DaggerWeapon : WeaponBase
         float spread = weaponStats.maxAngle / (weaponStats.numberOfAttacks - 1);
 
         // Adjust to set the starting direction
-        Quaternion startingRotation = Quaternion.AngleAxis((startingDegrees), Vector3.back);
-        direction = startingRotation * direction;
-
+        //Quaternion startingRotation = Quaternion.AngleAxis((startingDegrees), Vector3.back);
+        //direction = startingRotation * direction;
         for (int i = 0; i < weaponStats.numberOfAttacks; i++)
         {
-            GameObject thrownDagger = Instantiate(daggerPrefab, transform);
+            Debug.Log("transform is " + transform);
+            GameObject thrownDagger = Instantiate(projectilePrefab, wepObj);
 
-            thrownDagger.transform.position = transform.position;
+            thrownDagger.transform.position = wepObj.position;
             ThrowingDaggerProjectile throwingDaggerProjectile = thrownDagger.GetComponent<ThrowingDaggerProjectile>();
-            if (playerMove != null)
-            {
                 // throwing angle changes based on even or odd # of proj
-                throwingDaggerProjectile.SetDirection(
-                    direction,
-                    currentDegrees,
-                    playerMove.lastHorizontalVector
-                );
-                throwingDaggerProjectile.damage = weaponStats.damage;
-            }
+            throwingDaggerProjectile.SetDirection(
+                direction.normalized,
+                currentDegrees,
+                direction.x
+            );
+            throwingDaggerProjectile.damage = weaponStats.damage;
+            
 
             // Adjust angle to new angle
             direction = Quaternion.AngleAxis(spread, Vector3.forward) * direction;
@@ -56,8 +50,9 @@ public class DaggerWeapon : WeaponBase
         }
     }
 
-    public override void Attack()
+    public override void Attack(Vector3 direction, Transform wepObj)
     {
-        SpawnDagger();
+        Debug.Log("ATTACK IS CALLED");
+        SpawnDagger(direction, wepObj);
     }
 }
