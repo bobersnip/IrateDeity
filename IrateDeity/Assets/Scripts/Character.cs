@@ -135,6 +135,31 @@ public class Character : MonoBehaviour
     {
         return attack;
     }
+
+    public float GetSpeed()
+    {
+        return speed;
+    }
+
+    public int GetDefense()
+    {
+        return armor;
+    }
+
+    public int GetDexterity()
+    {
+        return dexterity;
+    }
+
+    public int GetWisdom()
+    {
+        return wisdom;
+    }
+
+    public int GetVitality()
+    {
+        return vitality;
+    }
 }
 
 
