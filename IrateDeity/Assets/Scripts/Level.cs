@@ -51,14 +51,14 @@ public class Level : MonoBehaviour
 
     private void LevelUp()
     {
-        if (upgradeChoices == null)
-        {
-            upgradeChoices = new List<UpgradeData>();
-        }
-        upgradeChoices.Clear();
-        upgradeChoices.AddRange(GetUpgrades(3));
+        //if (upgradeChoices == null)
+        //{
+        //    upgradeChoices = new List<UpgradeData>();
+        //}
+        //upgradeChoices.Clear();
+        //upgradeChoices.AddRange(GetUpgrades(3));
 
-        upgradePanelManager.OpenUpgradePanel(upgradeChoices);
+        // upgradePanelManager.OpenUpgradePanel(upgradeChoices);
         experience -= TO_LEVEL_UP;
         level += 1;
         experienceBar.SetLevelText(level);
