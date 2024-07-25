@@ -8,14 +8,13 @@ public class WeaponManager : MonoBehaviour
     private Camera mainCam;
     private Vector3 playerPos;
     private Vector3 mousePos;
-    public float dex = .05f;
+    public float dex = .02f;
     private float timer;
-
 
     [SerializeField] public WeaponBase weapon;
 
-    [SerializeField] Transform weaponObjectsContainer;
-    [SerializeField] WeaponData startingWeapon;
+    //[SerializeField] Transform weaponObjectsContainer;
+    //[SerializeField] WeaponData startingWeapon;
 
     List<WeaponBase> weapons;
 
@@ -26,6 +25,7 @@ public class WeaponManager : MonoBehaviour
     }
     private void Awake()
     {
+        weapon.SetData(weapon.weaponData);
         mousePos = Input.mousePosition;
         timer = dex;
     }
@@ -34,32 +34,21 @@ public class WeaponManager : MonoBehaviour
     {
         timer -= Time.deltaTime;
         //shooting mechanic
-        //If m1 clicked
         if (Input.GetMouseButton(0) && timer <= 0)
         {
-            
-            Debug.Log("Mouse Button clicked");
             // Get mouse pos
             mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
             // Get player pos
             playerPos = transform.position;
+            //Calculate direction vector and projectile rotation
             Vector3 direction = mousePos - transform.position;
             direction.z = 0;
-            //get projectile data from weapon
-            //shoot projectile
-            Debug.Log("playerPos is " + playerPos);
-            weapon.Attack(direction, weaponObjectsContainer);
+            float rotZ = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+
+            //Attack RAHHH
+            weapon.Attack(direction, playerPos, rotZ);
+            //Reset timer
             timer = dex;
         }
-        //If mouse 1 held down
-        //Shoot
     }
-
-    //private void shootProjectile(projectileBase projectilePrefab, float velocity)
-    //{
-    //    //Spawn projectile
-    //    projectileBase projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-    //    Vector3 dir = mousePos - transform.position;
-    //    Vector3 rot = transform.position - mousePos;
-    //}
 }
