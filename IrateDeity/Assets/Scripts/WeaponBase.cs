@@ -12,10 +12,9 @@ public abstract class WeaponBase : MonoBehaviour
     public float timeToAttack = 1f;
     private float timer;
 
-
     // abstract requires that each weapon will have its own attack method
     // Attack function will spawn a projectile
-    public abstract void Attack(Vector3 direction, Transform wepObj);
+    public abstract void Attack(Vector3 direction, Vector3 spawnPoint, float projRotation);
 
     public virtual void SetData(WeaponData wd)
     {

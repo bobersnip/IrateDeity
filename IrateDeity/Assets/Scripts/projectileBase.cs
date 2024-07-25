@@ -4,7 +4,6 @@ using UnityEngine;
 
 public abstract class projectileBase : MonoBehaviour
 {
-    [SerializeField] public GameObject spritePrefab;
     [SerializeField] public float velocity;
     //Movement modifier will be some routine to modify the way the projectile travels through the game
     //[SerializeField] string movementModifier
@@ -12,28 +11,15 @@ public abstract class projectileBase : MonoBehaviour
 
     //private Vector3 direction;
     [SerializeField] public Vector3 direction;
-    [SerializeField] public float speed;
     [SerializeField] public int damage;
-
     [SerializeField] public float duration;
-
+    [SerializeField] public float speed;
     public float timeAlive;
     public bool hitDetected = false;
 
-    //public void SetDirection(Vector3 direction, float currentDegrees, float playerHorizontalVectorComponent)
-    //{
-    //    this.direction = direction;
-    //    Debug.Log(currentDegrees);
-    //    if (playerHorizontalVectorComponent > 0)
-    //    {
-    //        currentDegrees += 180;
-    //    }
-
-    //    transform.localRotation *= Quaternion.AngleAxis(currentDegrees, Vector3.forward);
-    //}
-
     private void Update()
     {
+        //Update projectile position and increase timer
         transform.position += direction.normalized * speed * Time.deltaTime;
         timeAlive += Time.deltaTime;
 

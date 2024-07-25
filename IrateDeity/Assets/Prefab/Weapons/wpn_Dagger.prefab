@@ -48,7 +48,7 @@ MonoBehaviour:
   weaponStats:
     damage: 40
     timeToAttack: 2
-    numberOfAttacks: 1
+    numberOfAttacks: 0
     maxAngle: 0
   projectilePrefab: {fileID: 7183202481183830238, guid: 50056907cb68a814c9991bb12bfa7f2b, type: 3}
   timeToAttack: 1
