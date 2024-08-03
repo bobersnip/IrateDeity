@@ -14,13 +14,15 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
     public Sprite itemSprite;
     public bool isFull;
     public ItemType itemType;
-    public Item item;
 
     // ITEM SLOT
     [SerializeField] private TMP_Text quantityText;
     [SerializeField] private Image itemImage;
     [SerializeField] private EquippedSlot weaponSlot, abilitySlot, armorSlot, ringSlot;
     // public bool thisItemSelected;
+
+    // For Item Moving
+    private InventoryManager inventoryManager;
 
     public void AddItem(string itemName, int quantity, Sprite sprite, ItemType itemType)
     {
@@ -51,29 +53,18 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
     }
     public void UseItem()
     {
-        // thisItemSelected = true;
+        inventoryManager.AddItem(itemName, quantity, itemSprite, itemType);
+        RemoveCurrentItem();
 
-        // If this can be moved into an equipment slot, do it.
-        switch (item.itemType)
-        {
-            case ItemType.weapon:
-                Debug.Log("equipping weapon");
-                break;
-            case ItemType.ability:
-                Debug.Log("equipping ability");
-                break;
-            case ItemType.ring:
-                Debug.Log("equipping ability");
-                break;
-            case ItemType.armor:
-                Debug.Log("equipping armor");
-                break;
+    }
 
-            default:
-                Debug.Log("Don't do anything");
-                break;
-        }
-
+    private void RemoveCurrentItem()
+    {
+        itemName = "";
+        quantity = 0;
+        isFull = false;
+        itemSprite = null;
+        itemImage.sprite = null;
     }
 
     public void DropItem()
@@ -83,6 +74,7 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
     // Start is called before the first frame update
     void Start()
     {
+        inventoryManager = GameObject.Find("InventoryPanel").GetComponent<InventoryManager>();
 
     }
 

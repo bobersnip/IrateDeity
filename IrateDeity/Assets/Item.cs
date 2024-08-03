@@ -14,16 +14,6 @@ public class Item : MonoBehaviour
     private InventoryManager inventoryManager;
     public ItemType itemType;
 
-    public Item(string itemName, int quantity, Sprite sprite, InventoryManager inventoryManager, ItemType itemType)
-    {
-        this.itemName = itemName;
-        this.quantity = quantity;
-        this.sprite = sprite;
-        this.inventoryManager = inventoryManager;
-        this.itemType = itemType;
-    }
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +21,7 @@ public class Item : MonoBehaviour
         inventoryManager = GameObject.Find("InventoryPanel").GetComponent<InventoryManager>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
@@ -39,6 +29,14 @@ public class Item : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        inventoryManager.AddItem(itemName, quantity, sprite, itemType);
+    //        Destroy(gameObject);
+    //    }
+    //}
 
     public string GetItemName()
     {

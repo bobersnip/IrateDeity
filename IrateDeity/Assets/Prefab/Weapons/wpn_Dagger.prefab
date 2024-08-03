@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8540161577769743399}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
@@ -49,10 +49,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 1bb8c4f4fca898d4d91ffae41bdf80f0, type: 2}
   weaponStats:
-    damage: 40
-    timeToAttack: 2
-    numberOfAttacks: 0
-    maxAngle: 0
+    damage: 10
+    timeToAttack: 1
+    numberOfAttacks: 1
+    maxAngle: 30
   projectilePrefab: {fileID: 7183202481183830238, guid: 50056907cb68a814c9991bb12bfa7f2b, type: 3}
   timeToAttack: 1
 --- !u!114 &6710453601161754175
@@ -70,7 +70,7 @@ MonoBehaviour:
   itemName: Dagger
   quantity: 1
   sprite: {fileID: 2080843386, guid: 52811434633c832488ca8d7ed8c6cb81, type: 3}
-  itemType: 0
+  itemType: 1
 --- !u!212 &2388780161946025264
 SpriteRenderer:
   m_ObjectHideFlags: 0
