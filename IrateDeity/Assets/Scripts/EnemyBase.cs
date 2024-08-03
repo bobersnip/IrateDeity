@@ -25,6 +25,15 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable, INoncollidable
         }
         
     }
-    public abstract void TakeDamage(int damage);
+    public void TakeDamage(int damage)
+    {
+        hp -= damage;
+        if (hp < 1)
+        {
+            targetGameObject.GetComponent<Level>().AddExperience(experience_reward);
+            Destroy(gameObject);
+            //GetComponent<DropOnDestroy>().CheckDrop();
+        }
+    }
     public abstract void Attack();
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : EnemyBase
+public class ZeusEnemy : EnemyBase
 {
     [SerializeField] public Transform targetDestination;
     Character targetCharacter;
@@ -48,16 +48,5 @@ public class Enemy : EnemyBase
         }
 
         targetCharacter.TakeDamage(damage);
-    }
-
-    public override void TakeDamage(int damage)
-    {
-        hp -= damage;
-        if (hp < 1)
-        {
-            targetGameObject.GetComponent<Level>().AddExperience(experience_reward);
-            Destroy(gameObject);
-            //GetComponent<DropOnDestroy>().CheckDrop();
-        }
     }
 }
