@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMove : MonoBehaviour, INoncollidable
 {
     Rigidbody2D rgbd2d;
     [HideInInspector] public Vector3 movementVector;
@@ -13,7 +14,7 @@ public class PlayerMove : MonoBehaviour
 
     float speed = 3f;
 
-    Animate animate;
+    //Animate animate;
 
     // Awake is called before the first frame update
     private void Awake()
@@ -52,6 +53,16 @@ public class PlayerMove : MonoBehaviour
         movementVector *= speed;
         
         rgbd2d.velocity = movementVector;
+    }
+    public void IgnoreCollision()
+    {
+        INoncollidable[] objToIgnore = FindObjectsOfType<MonoBehaviour>().OfType<INoncollidable>().ToArray();
+        for (int i = 0; i < objToIgnore.Length; i++)
+        {
+            GameObject objToIgnoreGO = ((MonoBehaviour)objToIgnore[i]).gameObject;
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), objToIgnoreGO.GetComponent<Collider2D>());
+        }
+
     }
 
 }

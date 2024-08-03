@@ -56,14 +56,14 @@ public class WorldScrolling : MonoBehaviour
         {
             for (int pov_y = -(fieldOfViewVertical/2); pov_y <= fieldOfViewVertical/2; pov_y++)
             {
-                Debug.Log("Player tile position: " + playerTilePosition);
-                Debug.Log("pov: " + pov_x + ", " + pov_y);
+               // Debug.Log("Player tile position: " + playerTilePosition);
+               // Debug.Log("pov: " + pov_x + ", " + pov_y);
 
                 int tileToUpdate_x = CalculatePositionOnAxis(playerTilePosition.x + pov_x, true);
                 int tileToUpdate_y = CalculatePositionOnAxis(playerTilePosition.y + pov_y, false);
 
                 
-                Debug.Log("Tile to update: " + tileToUpdate_x + ", " + tileToUpdate_y);
+              //  Debug.Log("Tile to update: " + tileToUpdate_x + ", " + tileToUpdate_y);
 
                 GameObject tile = terrainTiles[tileToUpdate_x, tileToUpdate_y];
                 Vector3 newPosition = CalculateTilePosition(playerTilePosition.x + pov_x, playerTilePosition.y + pov_y);

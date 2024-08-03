@@ -5689,7 +5689,7 @@ GameObject:
   - component: {fileID: 1756342131}
   m_Layer: 0
   m_Name: PlayerCharacter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5901,8 +5901,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dex: 0.5
   weapon: {fileID: 1599909978762661323, guid: 5708849ccc6c8454097077be40329af5, type: 3}
-  weaponObjectsContainer: {fileID: 820547968}
-  startingWeapon: {fileID: 11400000, guid: 1bb8c4f4fca898d4d91ffae41bdf80f0, type: 2}
 --- !u!1 &1779873929
 GameObject:
   m_ObjectHideFlags: 0

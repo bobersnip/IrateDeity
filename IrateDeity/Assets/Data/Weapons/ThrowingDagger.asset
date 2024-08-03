@@ -15,12 +15,7 @@ MonoBehaviour:
   Name: ThrowingDagger
   stats:
     damage: 10
-    timeToAttack: 1
-    numberOfAttacks: 1
-    maxAngle: 30
+    timeToAttack: 0.5
+    numberOfAttacks: 3
+    maxAngle: 10
   weaponBasePrefab: {fileID: 8540161577769743399, guid: 5708849ccc6c8454097077be40329af5, type: 3}
-  weaponUpgrades:
-  - {fileID: 11400000, guid: 91229c2cc0a9c6042af99e65517181fc, type: 2}
-  - {fileID: 11400000, guid: fa2e25b3795421d4a8ad07b624d481e6, type: 2}
-  - {fileID: 11400000, guid: de40deae993a9d44ea5e6e8d41dbf55c, type: 2}
-  - {fileID: 11400000, guid: e698af1366e5c4f4bad714cbbd62ca6a, type: 2}

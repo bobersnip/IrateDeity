@@ -17,6 +17,9 @@ public abstract class projectileBase : MonoBehaviour
     public float timeAlive;
     public bool hitDetected = false;
 
+    //Assign this in awake function for all projectiles
+    public bool isEnemyProjectile;
+
     private void Update()
     {
         //Update projectile position and increase timer
@@ -42,6 +45,25 @@ public abstract class projectileBase : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Terrain"))
+        {
+            Debug.Log("Collision with terrain happened");
+            Destroy(gameObject);
+        }
+        if ((collision.gameObject.CompareTag("Player") && isEnemyProjectile == false))
+        {
+            Debug.Log("player collision");
+            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
+        if (collision.gameObject.CompareTag("Projectile"))
+        {
+            Debug.Log("projectile collision");
+            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         }
     }
 }

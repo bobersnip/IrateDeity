@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IDamageable
+public class ZeusEnemy : EnemyBase
 {
     [SerializeField] public Transform targetDestination;
-    GameObject targetGameObject;
     Character targetCharacter;
     [SerializeField] float speed;
 
+    //We will not be colliding with enemies.
     Rigidbody2D rgdbd2d;
 
     [SerializeField] int hp = 10;
@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour, IDamageable
         }
     }
 
-    private void Attack()
+    public override void Attack()
     {
         if (targetCharacter == null)
         {
@@ -48,16 +48,5 @@ public class Enemy : MonoBehaviour, IDamageable
         }
 
         targetCharacter.TakeDamage(damage);
-    }
-
-    public void TakeDamage(int damage)
-    {
-        hp -= damage;
-        if (hp < 1)
-        {
-            targetGameObject.GetComponent<Level>().AddExperience(experience_reward);
-            Destroy(gameObject);
-            //GetComponent<DropOnDestroy>().CheckDrop();
-        }
     }
 }

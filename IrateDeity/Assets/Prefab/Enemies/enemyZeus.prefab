@@ -99,6 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6879154fa4dfa2b4ca6598f3b81984fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 10
+  speed: 2
+  projectile: {fileID: 0}
   targetDestination: {fileID: 0}
   speed: 2
   hp: 10

@@ -33,10 +33,13 @@ public class DaggerWeapon : WeaponBase
 
         for (int i = 0; i < weaponStats.numberOfAttacks; i++)
         {
-            Debug.Log("Spawning On " + spawnPoint);
-            Debug.Log("Rotation is" + projRotation);
+            //Debug.Log("Spawning On " + spawnPoint);
+            //Debug.Log("Rotation is" + projRotation);
 
+            //Create the projectile and set rotation for center of arc
             GameObject thrownDagger = Instantiate(projectilePrefab, spawnPoint, Quaternion.Euler(0,0, -projRotation));
+
+            //Rotate projectiles to match angle for weapons shooting multiple projectiles
             ThrowingDaggerProjectile throwingDaggerProjectile = thrownDagger.GetComponent<ThrowingDaggerProjectile>();
             throwingDaggerProjectile.transform.localRotation *= Quaternion.AngleAxis(currentDegrees, Vector3.forward);
             throwingDaggerProjectile.direction = direction;
