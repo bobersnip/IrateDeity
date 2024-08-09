@@ -11,4 +11,8 @@ public class ThrowingDaggerProjectile : projectileBase
     //    speed = 10f;
     //    timeAlive = 0f;
     //}
+    private void Awake()
+    {
+        isEnemyProjectile = false;
+    }
 }
